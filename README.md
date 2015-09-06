@@ -1,7 +1,7 @@
-# android_post_reponse_asynctask
+# Generic AsyncTask
 This is a custom class that performs a POST call from Android App to Web Server and get the response's result back.
 
-### What For?
+## What For?
 In Android App, usually when you want to read data in text, XML, or JSON format from a web service, you need to have a private class that extends AsyncTask class. So that will create a big chunk of codes, i.e. private class, in your existing codes.
 
 Hence, this **PostResponseAsyncTask** class will help you to cut out the private class. You can read and write (POST) by using the same class with a different constructor call. Because it is async-ed, to get a callback result, you let your class implement **AsyncResponse** class and you can get a output from its method *processFinish()*. See examples below:
@@ -53,14 +53,14 @@ public class PostDataActivity extends AppCompatActivity implements AsyncResponse
 }
 ```
 
-<h1>Usage</h1>
+# Usage
 
-<h4>Class</h4>
+## Class
 ```java
 public class PostResponseAsyncTask extends AsyncTask<String, Void, String>
 ```
-<h4>Constuctor</h4>
-<h5>PostResponseAsyncTask(AsyncResponse delegate)</h5>
+### Constuctor
+#### PostResponseAsyncTask(AsyncResponse delegate)
 ```java
 public PostResponseAsyncTask(AsyncResponse delegate)
 ```
@@ -68,13 +68,9 @@ You have to at least call this constructor and pass in argument of an AsyncRespo
 
 This class is used to get data back from reponse. Because it is async-ed, you can get the data through the AsyncReponse's method called *processFinish(string output)*. In the method, you get the data via the 'output' String variable.
 
-here is an example
+Here is an example:
 
-```java
-
-  import com.teacherkosal.asynctask.AsyncResponse;
-  import com.teacherkosal.asynctask.PostResponseAsyncTask;
-  
+```java  
   public class ReadUserActivity extends AppCompatActivity implements AsyncResponse {
 
     @Override
@@ -94,7 +90,7 @@ here is an example
     }
   }
 ```
-<h5>PostResponseAsyncTask(AsyncResponse delegate, HashMap<String, String> postData)</h5>
+### PostResponseAsyncTask(AsyncResponse delegate, HashMap<String, String> postData)
 ```java
 public PostResponseAsyncTask(AsyncResponse delegate, HashMap<String, String> postData)
 ```
@@ -137,7 +133,7 @@ public class LoginActivity extends AppCompatActivity implements AsyncResponse {
 
 }
 ```
-<h5>And below is a sample PHP Code:</5>
+### And below is a sample PHP Code:
 ```php
 if(isset($_POST['username']) && isset($_POST['password'])){
     //Connection
@@ -194,11 +190,11 @@ public void setPostData(HashMap<String, String> postData)
 ```
 It is for setting postData.
 
-<h1>Set Up</h1>
+# Set Up
 <p>
 You need the two classes, so you can download them from here. Once your downloading completed, you can paste them into Android Studio. You can either paste them into your main project package, e.g. com.example.yourproject, but you have to change my classes package's name to e.g. com.example.yourproject as well, or you can create a new package called com.teacherkosal.asynctask and paste them into the new package.</p>
 
-<h1>Follow Me</h1>
- * Get more free source codes at https://github.com/okosal
- * Subscribe my YouTube channel https://youtube.com/user/oumsaokosal
- * Follow me on Twitter https://twitter.com/okosal
+## Follow Me
+ * Get more free source codes at https://github.com/kosalgeek
+ * Subscribe my YouTube channel https://youtube.com/c/Kosalgeekvideos
+ * Follow me on Twitter https://twitter.com/kosalgeek

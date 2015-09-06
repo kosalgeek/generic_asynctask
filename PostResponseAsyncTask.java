@@ -1,5 +1,3 @@
-package com.teacherkosal.post_response;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -20,10 +18,10 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 /**
- * Created by Oum Saokosal on 8/13/15.
- * Get More Free Source Codes at https://github.com/okosal
- * Subscribe my Youtube channel https://youtube.com/user/oumsaokosal
- * Follow Me on Twitter https://twitter.com/okosal
+ * Created by Oum Saokosal, the author of KosalGeek on 9/6/15.
+ * Get More Free Source Codes at https://github.com/kosalgeek
+ * Subscribe my Youtube channel https://youtube.com/c/Kosalgeekvideos
+ * Follow Me on Twitter https://twitter.com/kosalgeek
  */
 public class PostResponseAsyncTask extends AsyncTask<String, Void, String> {
 
@@ -76,13 +74,13 @@ public class PostResponseAsyncTask extends AsyncTask<String, Void, String> {
 
         for(int i = 0; i <= 0; i++){
 
-            result = performPostCall(urls[i], postData);
+            result = invokePost(urls[i], postData);
         }
 
         return result;
     }//doInBackground
 
-    private String performPostCall(String requestURL, HashMap<String, String> postDataParams) {
+    private String invokePost(String requestURL, HashMap<String, String> postDataParams) {
 
         URL url;
         String response = "";
