@@ -90,15 +90,13 @@ Here is an example:
     }
   }
 ```
-### PostResponseAsyncTask(AsyncResponse delegate, HashMap<String, String> postData)
+### PostResponseAsyncTask(AsyncResponse delegate, HashMap&lt;String, String&gt; postData)
 ```java
 public PostResponseAsyncTask(AsyncResponse delegate, HashMap<String, String> postData)
 ```
 This constructor is used for sending POST data into a web server. This constructor can get a second argument as **HashMap<String, String>**. See an example below:
 ```java
-import com.teacherkosal.asynctask.AsyncResponse;
-import com.teacherkosal.asynctask.PostResponseAsyncTask;
-import java.util.HashMap;
+
 public class LoginActivity extends AppCompatActivity implements AsyncResponse {
 
     EditText etUsername, etPassword;
@@ -191,10 +189,23 @@ public void setPostData(HashMap<String, String> postData)
 It is for setting postData.
 
 # Set Up
-<p>
-You need the two classes, so you can download them from here. Once your downloading completed, you can paste them into Android Studio. You can either paste them into your main project package, e.g. com.example.yourproject, but you have to change my classes package's name to e.g. com.example.yourproject as well, or you can create a new package called com.teacherkosal.asynctask and paste them into the new package.</p>
 
+You need the two classes, so you can download them from here. After deleted, you can paste them int your project into Android Studio. Please note that the above example uses Android Studio 1.2.3 (Updated September 2015). Make sure you place a gradle below in your dependencies
+```java
+compile 'com.android.support:appcompat-v7:22.2.1'
+```
 ## Follow Me
  * Get more free source codes at https://github.com/kosalgeek
  * Subscribe my YouTube channel https://youtube.com/c/Kosalgeekvideos
  * Follow me on Twitter https://twitter.com/kosalgeek
+
+# LICENSE
+
+(The MIT License)
+Copyright (c) 2015 KosalGeek. (kosalgeek at gmail dot com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
