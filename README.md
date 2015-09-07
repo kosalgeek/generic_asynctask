@@ -190,10 +190,15 @@ It is for setting postData.
 
 # Set Up
 
-You need the two classes, so you can download them from here. After deleted, you can paste them int your project into Android Studio. Please note that the above example uses Android Studio 1.2.3 (Updated September 2015). Make sure you place a gradle below in your dependencies
+1. Download **GenAsync.jar** from this github to your local machine. 
+2. Go to your project in Android Studio, on a Project panel (on the left), go to *app > libs*. You copy the *GenAsync.jar* and paste it in the *libs* folder > Press OK if a asked message appeared.
+3. Right click on the jar file > Choose *Add As Library*. And if you are still not sure how to do that, please check out this link http://code2care.org/pages/import-external-jars-to-android-studio-project/.
+4. Try this code below:
 ```java
-compile 'com.android.support:appcompat-v7:22.2.1'
+PostResponseAsyncTask task = new PostResponseAsyncTask(this);
 ```
+5. If it shows no errors and you see  **import com.kosalgeek.asynctask.PostResponseAsyncTask;** correctly, then you are good to go.
+
 ## Follow Me
  * Get more free source codes at https://github.com/kosalgeek
  * Subscribe my YouTube channel https://youtube.com/c/Kosalgeekvideos
