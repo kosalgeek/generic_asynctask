@@ -1,7 +1,7 @@
 # Generic AsyncTask
 This is a custom class that performs a POST call from Android App to Web Server and get the response's result back.
 
-###Now you watch the tutorial of using this class on YouTube at https://www.youtube.com/watch?v=e4eFBQmWs8Q###
+###Now you can watch the tutorial of using this class on YouTube at https://www.youtube.com/watch?v=e4eFBQmWs8Q###
 
 ## What For?
 In Android App, usually when you want to read data in text, XML, or JSON format from a web service, you need to have a private class that extends AsyncTask class. So that will create a big chunk of codes, i.e. private class, in your existing codes.
