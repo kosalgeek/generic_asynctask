@@ -1,7 +1,9 @@
-# Generic AsyncTask
+### *Attention: this class is deprecated due its inefficiency. You are adviced not to use it any more. Please use my newer version (1.2) library at https://github.com/kosalgeek/generic_asynctask_v2 instead. Thank you very much.* ###
+
+# Generic AsyncTask -- *Deprecated*
 This is a custom class that performs a POST call from Android App to Web Server and get the response's result back.
 
-###Now you can watch the tutorial of using this class on YouTube at https://www.youtube.com/watch?v=e4eFBQmWs8Q###
+#### Now you can watch the tutorial of using this class on YouTube at https://www.youtube.com/watch?v=e4eFBQmWs8Q ####
 
 ## What For?
 In Android App, usually when you want to read data in text, XML, or JSON format from a web service, you need to have a private class that extends AsyncTask class. So that will create a big chunk of codes, i.e. private class, in your existing codes.
@@ -202,9 +204,11 @@ PostResponseAsyncTask task = new PostResponseAsyncTask(this);
 5. If it shows no errors and you see  **import com.kosalgeek.asynctask.PostResponseAsyncTask;** correctly, then you are good to go.
 
 ## Follow Me
+ * Get more tutorials at http://www.kosalgeek.com and http://www.top12review.com
  * Get more free source codes at https://github.com/kosalgeek
- * Subscribe my YouTube channel https://youtube.com/c/Kosalgeekvideos
- * Follow me on Twitter https://twitter.com/kosalgeek
+ * Subscribe my YouTube channel https://youtube.com/user/oumsaokosal
+ * Follow me on Twitter https://twitter.com/kosalgeek and https://twitter.com/okosal
+ 
 
 # LICENSE
 
