@@ -1,7 +1,7 @@
 #### UPDATE 2-29-2016: Added ``@Deprecated``, more constructors, and exception handlers
 
 # Generic AsyncTask
-This is a custom class that performs a POST call from Android App to Web Server and get the response's result back.
+This is a custom Android generic AsyncTask class that performs a POST call from Android App to Web Server and get the response's result back.
 
 #### Now you can watch the tutorial of using this class on YouTube at https://www.youtube.com/watch?v=e4eFBQmWs8Q ####
 
