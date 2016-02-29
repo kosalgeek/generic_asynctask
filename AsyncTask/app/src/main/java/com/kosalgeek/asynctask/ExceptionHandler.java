@@ -8,6 +8,6 @@ package com.kosalgeek.asynctask;
  * Twitter https://twitter.com/kosalgeek
  * Watch video tutorial at https://youtube.com/user/oumsaokosal
  */
-public interface AsyncResponse {
-    void processFinish(String output);
+public interface ExceptionHandler {
+    void handleException(Exception e);
 }
