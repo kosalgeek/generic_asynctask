@@ -1,4 +1,4 @@
-### UPDATE 2-29-2016
+#### UPDATE 2-29-2016: Added ``@Deprecated``, more constructors, and exception handlers
 
 # Generic AsyncTask
 This is a custom class that performs a POST call from Android App to Web Server and get the response's result back.
@@ -91,7 +91,7 @@ Here is an example:
 ```
 Here is another example of using an anonymous class for the AsyncResponse:
 ```java
-PostResponseAsyncTask readData = new PostResponseAsyncTask(InsertActivity.this,
+PostResponseAsyncTask readData = new PostResponseAsyncTask(this,
         new AsyncResponse() {
             @Override
             public void processFinish(String s) {
@@ -99,6 +99,50 @@ PostResponseAsyncTask readData = new PostResponseAsyncTask(InsertActivity.this,
             }
         });
 readData.execute("http://yoursite.com/getdata.php");
+```
+
+### Exceptions Handler
+To connect into a web and retrieve a text from back, this library needs you to catch all 4 exceptions: ``IOException``, ``MalformedURLException``, ``ProtocolException``, and ``UnsupportedEncodingException``. It is very crucial to catch any of them. To handle this, you can use one of methods: ``setEachExceptionsHandler()`` to handle each exception in each override method and ``setExceptionHandler`` to handle any exception. The latter one is not recommended but use it when you are lazy and you just Toast "something went wrong".
+
+#### ``setEachExceptionsHandler(MyEachExceptionsHandler)``
+This method lets you catch all 4 exceptions. It is very recommended because you can Toast a message in each error. Below is the sample code:
+```java
+PostResponseAsyncTask readData = new PostResponseAsyncTask(this, this);
+readData.execute("http://yoursite.com/getdata.php");
+readData.setEachExceptionsHandler(new EachExceptionsHandler() {
+    @Override
+    public void handleIOException(IOException e) {
+        Toast.makeText(ListActivity.this, "Error with internet or web server.", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void handleMalformedURLException(MalformedURLException e) {
+        Toast.makeText(ListActivity.this, "Error with the URL.", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void handleProtocolException(ProtocolException e) {
+        Toast.makeText(ListActivity.this, "Error with protocol.", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void handleUnsupportedEncodingException(UnsupportedEncodingException e) {
+        Toast.makeText(ListActivity.this, "Error with text encoding.", Toast.LENGTH_LONG).show();
+    }
+});
+```
+
+#### ```setExceptionHandler(MyExceptionHandler)```
+This method is used to catch the root Exception class which covers all the exception. It is not recommended. You just a text "Something went wrong" to user whenever there is any exception. You can't tell which really causes the exception. So use it wisely. 
+```java
+PostResponseAsyncTask readData = new PostResponseAsyncTask(this, this);
+readData.execute("http://yoursite.com/getdata.php");
+readData.setExceptionHandler(new ExceptionHandler() {
+    @Override
+    public void handleException(Exception e) {
+        Toast.makeText(ListActivity.this, "Something went wrong.", Toast.LENGTH_LONG).show();
+    }
+});
 ```
 
 ### ``PostResponseAsyncTask(Context context, AsyncResponse asyncResponse, HashMap&lt;String, String&gt; postData)``
