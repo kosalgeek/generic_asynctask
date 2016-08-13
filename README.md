@@ -47,7 +47,7 @@ public class PostDataActivity extends AppCompatActivity implements AsyncResponse
         
         //You pass postData as the 3nd argument of the constructor
         //PostResponseAsyncTask loginTask = new PostResponseAsyncTask(this, postData); //deprecated
-        PostResponseAsyncTask loginTask = new PostResponseAsyncTask(this, this, postData);
+        PostResponseAsyncTask loginTask = new PostResponseAsyncTask(this, postData, this);
         loginTask.execute("http://yoursite.com/post.php");
     }
 
@@ -145,7 +145,7 @@ readData.setExceptionHandler(new ExceptionHandler() {
 });
 ```
 
-### ``PostResponseAsyncTask(Context context, AsyncResponse asyncResponse, HashMap&lt;String, String&gt; postData)``
+### ``PostResponseAsyncTask(Context context, AsyncResponse asyncResponse, HashMap<String, String> postData)``
 This constructor is used for sending POST data into a web server. This constructor can get a second argument as **HashMap<String, String>**. See an example below:
 ```java
 
@@ -169,7 +169,7 @@ public class LoginActivity extends AppCompatActivity implements AsyncResponse {
                 postData.put("username", etUsername.getText().toString());
                 postData.put("password", etPassword.getText().toString() );
                 PostResponseAsyncTask loginTask = 
-                            new PostResponseAsyncTask(LoginActivity.this, LoginActivity.this, postData);
+                            new PostResponseAsyncTask(LoginActivity.this, postData, LoginActivity.this);
                 loginTask.execute("http://yoursite.com/login.php");
             }
         });
